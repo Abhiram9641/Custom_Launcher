@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "esp-idf/boot_gpio_hook",
+		"source" : "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook"
+	}
+}
