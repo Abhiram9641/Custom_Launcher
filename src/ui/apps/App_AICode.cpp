@@ -14,9 +14,11 @@ const char* kb_layout[] = {
     "1234567890",
     "qwertyuiop",
     "asdfghjkl!",
-    "^zxcvbnm<",
+    "[zxcvbnm<",
     "S>" // S=Space, >=Enter
 };
+
+static const char* symbol_row = "!@#$%^&*()";
 
 App_AICode::App_AICode() {
     current_state = STATE_CHECK;
@@ -122,10 +124,11 @@ void App_AICode::handleInput(input_event_t event) {
                         current_state = STATE_CONNECTING;
                     }
                 }
-                else if (key == '^') caps_lock = !caps_lock;
+                else if (key == '[') caps_lock = !caps_lock;
                 else if (key == '!') visible_pass = !visible_pass;
                 else if (key != ' ') {
-                    if (key >= 'a' && key <= 'z' && caps_lock) key -= 32;
+                    if (kb_row == 0 && caps_lock) key = symbol_row[kb_col];
+                    else if (key >= 'a' && key <= 'z' && caps_lock) key -= 32;
                     password += key;
                 }
             }
@@ -245,19 +248,31 @@ void App_AICode::draw_keyboard(LGFX_Sprite* canvas) {
 
     for (int r = 0; r < 5; r++) {
         int row_len = strlen(kb_layout[r]);
-        int row_w = (r == 4) ? (80 + 40 + spacing_x) : (row_len * (key_w + spacing_x) - spacing_x);
+        int row_w = (r == 4) ? (80 + 40 + spacing_x) : (r == 3 ? (7 * 16 + 2 * 22 + 2 * 2) : (10 * 16 - 2));
+        if (r == 3) row_w = 158; // Force to match top rows
         int sx = (canvas->width() - row_w) / 2;
         int sy = kb_y_start + r * (key_h + spacing_y);
 
         for (int c = 0; c < row_len; c++) {
             char k = kb_layout[r][c];
-            int kw = (r == 4) ? (c == 0 ? 80 : 40) : key_w;
-            int kx = (r == 4 && c == 1) ? (sx + 80 + spacing_x) : (sx + c * (key_w + spacing_x));
+            int kw = (r == 4) ? (c == 0 ? 80 : 40) : ((r == 3 && (c == 0 || c == 8)) ? 22 : key_w);
+            
+            // Calc KX smarter for Row 3
+            int kx;
+            if (r == 4) {
+                kx = (c == 1) ? (sx + 80 + spacing_x) : sx;
+            } else if (r == 3) {
+                if (c == 0) kx = sx;
+                else if (c == 8) kx = sx + 22 + spacing_x + 7 * (key_w + spacing_x);
+                else kx = sx + 22 + spacing_x + (c - 1) * (key_w + spacing_x);
+            } else {
+                kx = sx + c * (key_w + spacing_x);
+            }
             
             bool is_selected = (r == kb_row && c == kb_col);
             uint16_t key_col = is_selected ? theme_get_accent() : blend_color(theme_get_text_dim(), theme_get_bg(), 0.15f);
-            if (k == '^' && caps_lock) key_col = theme_get_accent(); // Caps lock active color
-            uint16_t txt_col = (is_selected || (k == '^' && caps_lock)) ? theme_get_bg() : theme_get_text();
+            if (k == '[' && caps_lock) key_col = theme_get_accent(); // Caps lock active color
+            uint16_t txt_col = (is_selected || (k == '[' && caps_lock)) ? theme_get_bg() : theme_get_text();
 
             canvas->fillRoundRect(kx, sy, kw, key_h, 3, key_col);
             if (!is_selected) canvas->drawRoundRect(kx, sy, kw, key_h, 3, theme_get_text_dim());
@@ -266,12 +281,13 @@ void App_AICode::draw_keyboard(LGFX_Sprite* canvas) {
             canvas->setTextDatum(textdatum_t::middle_center);
             
             char label[16] = {k, 0};
-            if (k >= 'a' && k <= 'z' && caps_lock) label[0] -= 32;
+            if (r == 0 && caps_lock) label[0] = symbol_row[c];
+            else if (k >= 'a' && k <= 'z' && caps_lock) label[0] -= 32;
             
             if (k == 'S') strcpy(label, "SPACE");
             if (k == '<') strcpy(label, "DEL");
             if (k == '>') strcpy(label, "ENTER");
-            if (k == '^') strcpy(label, "CAPS");
+            if (k == '[') strcpy(label, "CAPS");
             if (k == '!') strcpy(label, "V/H");
             if (k == ' ') strcpy(label, "");
             
