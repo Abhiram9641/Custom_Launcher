@@ -1,4 +1,4 @@
-# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook
+# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/bootloader_components/boot_gpio_hook
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

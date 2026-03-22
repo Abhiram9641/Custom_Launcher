@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/cmake_install.cmake")
+  include("/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

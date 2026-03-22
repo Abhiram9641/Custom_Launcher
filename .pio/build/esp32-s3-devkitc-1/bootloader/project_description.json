@@ -4,8 +4,8 @@
     "project_version":    "e3f200e-dirty",
     "project_path":       "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject",
     "idf_path":           "/home/abhiram/.platformio/packages/framework-espidf",
-    "build_dir":          "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader",
-    "config_file":        "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/sdkconfig.esp32-s3-devkitc-1",
+    "build_dir":          "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader",
+    "config_file":        "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/sdkconfig.esp32-s3-devkitc-1",
     "config_defaults":    "",
     "bootloader_elf":     "",
     "app_elf":            "bootloader.elf",
@@ -26,21 +26,21 @@
     },
     "common_component_reqs": [ "log", "esp_rom", "esp_common", "esp_hw_support", "newlib", "xtensa" ],
     "build_components" : [ "boot_gpio_hook", "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_security", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_app_format", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_bootloader_format", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_common", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_security", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_system", "/home/abhiram/.platformio/packages/framework-espidf/components/esptool_py", "/home/abhiram/.platformio/packages/framework-espidf/components/freertos", "/home/abhiram/.platformio/packages/framework-espidf/components/hal", "/home/abhiram/.platformio/packages/framework-espidf/components/log", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/main", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/components/micro-ecc", "/home/abhiram/.platformio/packages/framework-espidf/components/newlib", "/home/abhiram/.platformio/packages/framework-espidf/components/partition_table", "/home/abhiram/.platformio/packages/framework-espidf/components/soc", "/home/abhiram/.platformio/packages/framework-espidf/components/spi_flash", "/home/abhiram/.platformio/packages/framework-espidf/components/xtensa", "" ],
+    "build_component_paths" : [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/bootloader_components/boot_gpio_hook", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_app_format", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_bootloader_format", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_common", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_security", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_system", "/home/abhiram/.platformio/packages/framework-espidf/components/esptool_py", "/home/abhiram/.platformio/packages/framework-espidf/components/freertos", "/home/abhiram/.platformio/packages/framework-espidf/components/hal", "/home/abhiram/.platformio/packages/framework-espidf/components/log", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/main", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/components/micro-ecc", "/home/abhiram/.platformio/packages/framework-espidf/components/newlib", "/home/abhiram/.platformio/packages/framework-espidf/components/partition_table", "/home/abhiram/.platformio/packages/framework-espidf/components/soc", "/home/abhiram/.platformio/packages/framework-espidf/components/spi_flash", "/home/abhiram/.platformio/packages/framework-espidf/components/xtensa", "" ],
     "build_component_info" : {
         "boot_gpio_hook": {
             "alias": "idf::boot_gpio_hook",
             "target": "___idf_boot_gpio_hook",
             "prefix": "idf",
-            "dir": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook",
+            "dir": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/bootloader_components/boot_gpio_hook",
             "type": "LIBRARY",
             "lib": "__idf_boot_gpio_hook",
             "reqs": [ "bootloader", "bootloader_support", "soc", "esp_rom" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/boot_gpio_hook/libboot_gpio_hook.a",
-            "sources": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook/boot_gpio_hook.c" ],
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/boot_gpio_hook/libboot_gpio_hook.a",
+            "sources": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/bootloader_components/boot_gpio_hook/boot_gpio_hook.c" ],
             "include_dirs": []
         },
         "bootloader": {
@@ -69,7 +69,7 @@
             "priv_reqs": [ "micro-ecc", "spi_flash", "efuse", "esp_bootloader_format", "esp_app_format", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/bootloader_support/libbootloader_support.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/bootloader_support/libbootloader_support.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_common.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_common_loader.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_clock_init.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_mem.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_random.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_efuse.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/flash_encrypt.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/secure_boot.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_random_esp32s3.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/bootloader_flash/src/flash_qio_mode.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32s3.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_utility.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/flash_partitions.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/esp_image_format.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_sha.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_init.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_clock_loader.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_console.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_console_loader.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/esp32s3/bootloader_soc.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/esp32s3/bootloader_esp32s3.c", "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader_support/src/bootloader_panic.c" ],
             "include_dirs": [ "include", "bootloader_flash/include", "private_include" ]
         },
@@ -84,7 +84,7 @@
             "priv_reqs": [ "bootloader_support", "soc", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/efuse/libefuse.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/efuse/libefuse.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/esp32s3/esp_efuse_table.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/esp32s3/esp_efuse_fields.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/esp32s3/esp_efuse_rtc_calib.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/esp32s3/esp_efuse_utility.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/src/esp_efuse_api.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/src/esp_efuse_fields.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/src/esp_efuse_utility.c", "/home/abhiram/.platformio/packages/framework-espidf/components/efuse/src/efuse_controller/keys/with_key_purposes/esp_efuse_api_key.c" ],
             "include_dirs": [ "include", "esp32s3/include" ]
         },
@@ -114,7 +114,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/esp_bootloader_format/esp_bootloader_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -129,7 +129,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_common/libesp_common.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_common/libesp_common.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/esp_common/src/esp_err_to_name.c" ],
             "include_dirs": [ "include" ]
         },
@@ -144,7 +144,7 @@
             "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/cpu.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/esp_cpu_intr.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/esp_memory_utils.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/cpu_region_protect.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/rtc_clk.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/rtc_clk_init.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/rtc_init.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/rtc_sleep.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/rtc_time.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32s3/chip_info.c" ],
             "include_dirs": [ "include", "include/soc", "include/soc/esp32s3", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "mspi_timing_tuning/tuning_scheme_impl/include", "power_supply/include" ]
         },
@@ -159,7 +159,7 @@
             "priv_reqs": [ "soc", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_rom/libesp_rom.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_rom/libesp_rom.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_sys.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_print.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_crc.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_uart.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_spiflash.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_efuse.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_gpio.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_longjmp.S", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_systimer.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_wdt.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_cache_esp32s2_esp32s3.c", "/home/abhiram/.platformio/packages/framework-espidf/components/esp_rom/patches/esp_rom_cache_writeback_esp32s3.S" ],
             "include_dirs": [ "include", "esp32s3/include", "esp32s3/include/esp32s3", "esp32s3" ]
         },
@@ -189,7 +189,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_system/libesp_system.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/esp_system/libesp_system.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/esp_system/esp_err.c" ],
             "include_dirs": []
         },
@@ -234,7 +234,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/hal/libhal.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/hal/libhal.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/hal/hal_utils.c", "/home/abhiram/.platformio/packages/framework-espidf/components/hal/mpu_hal.c", "/home/abhiram/.platformio/packages/framework-espidf/components/hal/efuse_hal.c", "/home/abhiram/.platformio/packages/framework-espidf/components/hal/esp32s3/efuse_hal.c", "/home/abhiram/.platformio/packages/framework-espidf/components/hal/mmu_hal.c", "/home/abhiram/.platformio/packages/framework-espidf/components/hal/cache_hal.c" ],
             "include_dirs": [ "platform_port/include", "esp32s3/include", "include" ]
         },
@@ -249,7 +249,7 @@
             "priv_reqs": [ "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/log/liblog.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/log/liblog.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/noos/log_timestamp.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/log_timestamp_common.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/noos/log_lock.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/buffer/log_buffers.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/noos/util.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/util.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/log_format_text.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/log_print.c", "/home/abhiram/.platformio/packages/framework-espidf/components/log/src/log.c" ],
             "include_dirs": [ "include" ]
         },
@@ -264,7 +264,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/main/libmain.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/main/libmain.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/main/bootloader_start.c" ],
             "include_dirs": []
         },
@@ -279,7 +279,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/micro-ecc/libmicro-ecc.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/micro-ecc/libmicro-ecc.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject/components/micro-ecc/uECC_verify_antifault.c" ],
             "include_dirs": [ ".", "micro-ecc" ]
         },
@@ -324,7 +324,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/soc/libsoc.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/soc/libsoc.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/soc/lldesc.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/dport_access_common.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/interrupts.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/gpio_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/uart_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/adc_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/dedic_gpio_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/gdma_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/spi_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/ledc_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/pcnt_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/rmt_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/sdm_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/i2s_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/i2c_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/temperature_sensor_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/timer_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/lcd_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/mcpwm_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/mpi_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/sdmmc_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/touch_sensor_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/twai_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/wdt_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/usb_dwc_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/rtc_io_periph.c", "/home/abhiram/.platformio/packages/framework-espidf/components/soc/esp32s3/power_supply_periph.c" ],
             "include_dirs": [ "include", "esp32s3", "esp32s3/include", "esp32s3/register" ]
         },
@@ -339,7 +339,7 @@
             "priv_reqs": [ "bootloader_support", "soc" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/spi_flash/libspi_flash.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/spi_flash/libspi_flash.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/spi_flash/spi_flash_wrap.c" ],
             "include_dirs": [ "include" ]
         },
@@ -354,7 +354,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/xtensa/libxtensa.a",
+            "file": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/esp-idf/xtensa/libxtensa.a",
             "sources": [ "/home/abhiram/.platformio/packages/framework-espidf/components/xtensa/eri.c", "/home/abhiram/.platformio/packages/framework-espidf/components/xtensa/xt_trax.c" ],
             "include_dirs": [ "esp32s3/include", "include", "deprecated_include" ]
         }
@@ -454,7 +454,7 @@
             "priv_reqs": [ "esp_driver_uart", "esp_driver_usb_serial_jtag" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test" ]
+            "include_dirs": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher" ]
         },
         "cxx": {
             "alias": "idf::cxx",
@@ -502,7 +502,7 @@
             "priv_reqs": [ "http_parser", "esp_timer", "lwip" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test", "esp-tls-crypto" ]
+            "include_dirs": [ "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher", "esp-tls-crypto" ]
         },
         "esp_adc": {
             "alias": "idf::esp_adc",
@@ -1684,7 +1684,7 @@
             "alias": "idf::boot_gpio_hook",
             "target": "___idf_boot_gpio_hook",
             "prefix": "idf",
-            "dir": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/bootloader_components/boot_gpio_hook",
+            "dir": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/bootloader_components/boot_gpio_hook",
             "lib": "__idf_boot_gpio_hook",
             "reqs": [ "bootloader", "bootloader_support", "soc", "esp_rom" ],
             "priv_reqs": [],
@@ -1707,10 +1707,10 @@
     },
     "debug_prefix_map_gdbinit": "",
     "gdbinit_files": {
-        "01_symbols": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/symbols",
-        "02_prefix_map": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/prefix_map",
-        "03_py_extensions": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/py_extensions",
-        "04_connect": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/connect"
+        "01_symbols": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/symbols",
+        "02_prefix_map": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/prefix_map",
+        "03_py_extensions": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/py_extensions",
+        "04_connect": "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader/gdbinit/connect"
     },
     "debug_arguments_openocd": "-f board/esp32s3-builtin.cfg"
 }

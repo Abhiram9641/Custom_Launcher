@@ -78,8 +78,6 @@ RTC_NOINIT_ATTR uint32_t s_boot_force_launcher_flag;
 
 /* ---- Internal helpers ---- */
 
-static bool s_display_ok = false;
-
 /*
  * Validate that ota_1 contains a properly flashed and valid image.
  * Uses esp_ota_get_state_partition() as recommended — more reliable than
@@ -362,7 +360,6 @@ void boot_ctrl_check(void) {
 
     while (true) {
         int64_t elapsed_us  = esp_timer_get_time() - start_us;
-        float   elapsed_ms  = (float)(elapsed_us / 1000);
 
 #ifdef __cplusplus
         if (s_display_ok) {

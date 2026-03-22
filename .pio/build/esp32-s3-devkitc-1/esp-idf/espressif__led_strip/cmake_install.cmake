@@ -1,4 +1,4 @@
-# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/managed_components/espressif__led_strip
+# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/managed_components/espressif__led_strip
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

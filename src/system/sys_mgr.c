@@ -22,6 +22,7 @@ void sys_mgr_send_ui_msg(ota_state_t state, float progress, float kbps, const ch
     if (s_ui_queue == NULL) return;
 
     ui_message_t ui_msg;
+    memset(&ui_msg, 0, sizeof(ui_msg)); // Crucial for new fields
     ui_msg.state    = state;
     ui_msg.progress = progress;
     ui_msg.kbps     = kbps;
@@ -29,8 +30,6 @@ void sys_mgr_send_ui_msg(ota_state_t state, float progress, float kbps, const ch
     if (msg != NULL) {
         strncpy(ui_msg.msg, msg, sizeof(ui_msg.msg) - 1);
         ui_msg.msg[sizeof(ui_msg.msg) - 1] = '\0';
-    } else {
-        ui_msg.msg[0] = '\0';
     }
 
     xQueueSend(s_ui_queue, &ui_msg, pdMS_TO_TICKS(10));

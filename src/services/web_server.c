@@ -20,7 +20,7 @@
 
 #include "web_server.h"
 #include "ota_service.h"
-#include "wifi_ap.h"
+#include "wifi_mgr.h"
 #include "../config/sys_config.h"
 #include "../config/web_ui.h"
 #include "../system/sys_mgr.h"

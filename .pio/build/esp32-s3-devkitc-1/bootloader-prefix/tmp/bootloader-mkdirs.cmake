@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/abhiram/.platformio/packages/framework-espidf/components/bo
   file(MAKE_DIRECTORY "/home/abhiram/.platformio/packages/framework-espidf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader"
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix"
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/tmp"
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp"
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src"
-  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/tmp"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src"
+  "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

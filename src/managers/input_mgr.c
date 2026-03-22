@@ -1,5 +1,6 @@
 #include "input_mgr.h"
 #include "esp_log.h"
+#include "../services/idle_mgr.h"
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -44,6 +45,7 @@ static void input_poll_task(void *arg) {
                     
                     // Fire event on press (falling edge due to pull-up)
                     if (current == 0) {
+                        idle_mgr_feed(); // Reset sleep timer
                         if (s_input_queue) {
                             input_event_t ev = s_buttons[i].event;
                             xQueueSend(s_input_queue, &ev, 0);

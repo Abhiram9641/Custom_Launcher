@@ -1,4 +1,4 @@
-/* * Data converted from /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/x509_crt_bundle
+/* * Data converted from /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

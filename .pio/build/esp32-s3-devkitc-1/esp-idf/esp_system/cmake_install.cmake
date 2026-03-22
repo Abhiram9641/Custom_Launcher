@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1/esp-idf/esp_system/port/cmake_install.cmake")
+  include("/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1/esp-idf/esp_system/port/cmake_install.cmake")
 endif()
 

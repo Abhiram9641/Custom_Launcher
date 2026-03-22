@@ -272,6 +272,8 @@ void App_OTA::render(LGFX_Sprite* canvas) {
             state_color   = theme_get_fail();
             display_level = smooth_progress;
             break;
+        default:
+            break;
     }
 
     /* ---- Tank (centre of screen, offset up to leave room below) ---- */

@@ -58,27 +58,17 @@ void App_Grid::exit() {
 }
 
 void App_Grid::loop() {
-    anim_time += 0.05f;
+    anim_time += 0.04f; 
     
-    // Superior Spring Physics for clean fluid bouncy movement
-    float tension = 0.25f;
-    float damp = 0.65f;
-    
-    cursor_vx += (target_cursor_x - cursor_x) * tension;
-    cursor_vx *= damp;
-    cursor_x += cursor_vx;
+    // First-order Easing (Lerp) for zero-bounce professional movement
+    float ease = 0.22f; 
+    cursor_x += (target_cursor_x - cursor_x) * ease;
+    cursor_y += (target_cursor_y - cursor_y) * ease;
+    cursor_w += (target_cursor_w - cursor_w) * ease;
+    cursor_h += (target_cursor_h - cursor_h) * ease;
 
-    cursor_vy += (target_cursor_y - cursor_y) * tension;
-    cursor_vy *= damp;
-    cursor_y += cursor_vy;
-
-    cursor_vw += (target_cursor_w - cursor_w) * tension;
-    cursor_vw *= damp;
-    cursor_w += cursor_vw;
-
-    cursor_vh += (target_cursor_h - cursor_h) * tension;
-    cursor_vh *= damp;
-    cursor_h += cursor_vh;
+    // Reset velocities (no longer used in lerp, but kept for struct compatibility if needed)
+    cursor_vx = 0; cursor_vy = 0; cursor_vw = 0; cursor_vh = 0;
 }
 
 void App_Grid::handleInput(input_event_t event) {
@@ -150,17 +140,14 @@ void App_Grid::render(LGFX_Sprite* canvas) {
     int gap_y = 10;
     
     int start_x = (canvas->width() - (3 * icon_size + 2 * gap_x)) / 2;
-    int start_y = (canvas->height() - (3 * icon_size + 2 * gap_y)) / 2 - 3;
+    int start_y = (canvas->height() - (3 * icon_size + 2 * gap_y)) / 2 + 5; // Lowered by 8px total for user-defined balance
     
     float base_target_x = start_x + sel_col * (icon_size + gap_x);
     float base_target_y = start_y + sel_row * (icon_size + gap_y);
-    
-    float dx = base_target_x - cursor_x;
-    float dy = base_target_y - cursor_y;
 
-    // Apply squash and stretch velocity to create a fluid, jelly-like transition
-    target_cursor_w = icon_size + fabsf(dx) * 0.3f;
-    target_cursor_h = icon_size + fabsf(dy) * 0.3f;
+    // Clean, direct targeting (removed jelly stretch)
+    target_cursor_w = icon_size;
+    target_cursor_h = icon_size;
 
     target_cursor_x = base_target_x - (target_cursor_w - icon_size) * 0.5f;
     target_cursor_y = base_target_y - (target_cursor_h - icon_size) * 0.5f;
@@ -208,19 +195,19 @@ void App_Grid::render(LGFX_Sprite* canvas) {
     };
 
     /* 1. Glassy backdrop — very dim fill so icon doesn't get washed out */
-    canvas->fillRoundRect(cx_draw - 4, cy_draw - 4, cw_draw + 8, ch_draw + 8, 10,
+    canvas->fillRect(cx_draw - 4, cy_draw - 4, cw_draw + 8, ch_draw + 8,
                           blend_with_bg(30));
 
     /* 2. Diffuse outer glow — three rings, each 40% dimmer than the last */
-    canvas->drawRoundRect(cx_draw - 7, cy_draw - 7, cw_draw + 14, ch_draw + 14, 12,
+    canvas->drawRect(cx_draw - 7, cy_draw - 7, cw_draw + 14, ch_draw + 14,
                           blend_with_bg(40));
-    canvas->drawRoundRect(cx_draw - 5, cy_draw - 5, cw_draw + 10, ch_draw + 10, 11,
+    canvas->drawRect(cx_draw - 5, cy_draw - 5, cw_draw + 10, ch_draw + 10,
                           blend_with_bg(80));
-    canvas->drawRoundRect(cx_draw - 4, cy_draw - 4, cw_draw + 8,  ch_draw + 8,  10,
+    canvas->drawRect(cx_draw - 4, cy_draw - 4, cw_draw + 8,  ch_draw + 8,
                           blend_with_bg(130));
 
-    /* 3. Crisp inner border — 1 pixel, full accent, radius = icon radius */
-    canvas->drawRoundRect(cx_draw - 3, cy_draw - 3, cw_draw + 6, ch_draw + 6, 9, acc);
+    /* 3. Crisp inner border — 1 pixel, full accent, radius = 0 */
+    canvas->drawRect(cx_draw - 3, cy_draw - 3, cw_draw + 6, ch_draw + 6, acc);
 
     /* 4. Animated corner bracket ticks
      *    Each bracket = 2 short lines forming an "L" at each corner.
@@ -251,8 +238,6 @@ void App_Grid::render(LGFX_Sprite* canvas) {
         canvas->fillCircle(bx1 + 1, by0 - 1, 1, acc);
     }
 
-    uint16_t bg_color = theme_get_bg();
-
     for (int i = start_idx; i < end_idx; i++) {
         int idx = i % MAX_APPS_PER_PAGE;
         int x = start_x + (idx % 3) * (icon_size + gap_x);
@@ -263,22 +248,25 @@ void App_Grid::render(LGFX_Sprite* canvas) {
             // on the stack (no heap), then blit directly to the sprite.
             uint16_t icon32[32 * 32];
             downsample_64_to_32(apps[i].icon_rgb565, icon32);
-            canvas->pushImage(x, y, 32, 32, icon32);
             
-            // Mask the corners with bg_color to create smooth rounded borders algorithmically
-            int r = 8; // Super sharp curved radius for app icon
-            for (int cy = 0; cy < r; cy++) {
-                for (int cx = 0; cx < r; cx++) {
-                    if ((cx - r)*(cx - r) + (cy - r)*(cy - r) > r*r) {
-                        canvas->drawPixel(x + cx, y + cy, bg_color); // Top Left
-                        canvas->drawPixel(x + 31 - cx, y + cy, bg_color); // Top Right
-                        canvas->drawPixel(x + cx, y + 31 - cy, bg_color); // Bottom Left
-                        canvas->drawPixel(x + 31 - cx, y + 31 - cy, bg_color); // Bottom Right
-                    }
+            if (i == selected_index) {
+                // Professional Enlargement: Selected app grows smoothly
+                // We temporary render the icon to a sprite to use pushRotateZoom.
+                LGFX_Sprite temp_sp(canvas);
+                temp_sp.setPsram(false); // Small sprite in internal RAM
+                if (temp_sp.createSprite(32, 32)) {
+                    temp_sp.pushImage(0, 0, 32, 32, icon32);
+                    float zoom = (cursor_w / (float)icon_size) * 1.15f; 
+                    temp_sp.pushRotateZoom(x + 16, y + 16, 0, zoom, zoom);
+                    temp_sp.deleteSprite();
+                } else {
+                    canvas->pushImage(x, y, 32, 32, icon32); // Fallback
                 }
+            } else {
+                canvas->pushImage(x, y, 32, 32, icon32);
             }
         } else {
-            canvas->fillRoundRect(x, y, 32, 32, 8, canvas->color565(30, 40, 50));
+            canvas->fillRect(x, y, 32, 32, canvas->color565(30, 40, 50));
         }
         
         if (i == selected_index) {

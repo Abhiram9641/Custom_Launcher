@@ -6,18 +6,24 @@
  * Dependants : All layers — keep additions here, not buried in .c files.
  */
 #pragma once
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* --------------------------------------------------------------------------
- * Wi-Fi Access Point
+ * Wi-Fi Access Point / Station
  * -------------------------------------------------------------------------- */
 #define APP_WIFI_SSID           "ESP32_OTA_Launcher"
 #define APP_WIFI_PASS           ""          /* Open AP — add password for security */
 #define APP_WIFI_CHANNEL        1
 #define APP_WIFI_MAX_CONN       4
+
+/* Station Mode Config */
+#define APP_WIFI_SCAN_TIMEOUT_MS    10000
+#define APP_WIFI_CONN_TIMEOUT_MS    15000
+#define MAX_WIFI_NETWORKS           12
 
 /* --------------------------------------------------------------------------
  * HTTP Server
@@ -52,7 +58,7 @@ extern "C" {
 #define APP_UI_QUEUE_SIZE       10
 
 /* --------------------------------------------------------------------------
- * OTA State Machine
+ * OTA / WiFi State Machine
  * -------------------------------------------------------------------------- */
 typedef enum {
     OTA_STATE_IDLE        = 0,  /* Waiting for upload */
@@ -60,7 +66,11 @@ typedef enum {
     OTA_STATE_VALIDATING  = 2,  /* Checking binary header */
     OTA_STATE_FLASHING    = 3,  /* Writing to flash */
     OTA_STATE_SUCCESS     = 4,  /* Complete, pending reboot */
-    OTA_STATE_FAILED      = 5   /* Unrecoverable error */
+    OTA_STATE_FAILED      = 5,  /* Unrecoverable error */
+    WIFI_STATE_SCANNING   = 6,  /* Scanning for networks */
+    WIFI_STATE_CONNECTING = 7,  /* Connecting to AP */
+    WIFI_STATE_SUCCESS    = 8,  /* Connected as STA */
+    WIFI_STATE_DISCONNECTED = 9 /* Connection lost/failed */
 } ota_state_t;
 
 /* --------------------------------------------------------------------------
@@ -71,6 +81,8 @@ typedef struct {
     float       progress;           /* 0–100 */
     float       kbps;               /* Transfer rate in KB/s, 0 if unknown */
     char        msg[64];
+    uint16_t    rssi;               /* For WiFi status */
+    char        ip_addr[16];        /* For WiFi status */
 } ui_message_t;
 
 #ifdef __cplusplus

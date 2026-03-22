@@ -1,4 +1,4 @@
-# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/src
+# Install script for directory: /home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

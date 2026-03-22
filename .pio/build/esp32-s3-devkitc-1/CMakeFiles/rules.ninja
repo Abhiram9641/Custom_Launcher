@@ -1947,7 +1947,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_src_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/abhiram/.platformio/packages/tool-cmake/bin/cmake --regenerate-during-build -S/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test -B/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/test/.pio/build/esp32-s3-devkitc-1
+  command = /home/abhiram/.platformio/packages/tool-cmake/bin/cmake --regenerate-during-build -S/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher -B/home/abhiram/Projects/Project_Personal/ESP_32_Custom_Launcher/Custom_Launcher/.pio/build/esp32-s3-devkitc-1
   description = Re-running CMake...
   generator = 1
 
